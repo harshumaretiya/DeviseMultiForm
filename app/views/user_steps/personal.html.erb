@@ -1,0 +1,32 @@
+Personal
+
+<%= form_for('', url: personal_user_step_path, method: :post) do |f| %>
+<%= hidden_field_tag :mobile_view, params[:mobile_view] %>
+  <h2>Tell us a little about yourself</h2>
+     <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", required: true,value: session[:email] %>
+  </div>
+ <div class="field">
+    <%= f.label :first_name %><br />
+    <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name", required: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :last_Name %><br />
+    <%= f.text_field :last_name, autofocus: true, autocomplete: "last_name", required: true %>    
+  </div>
+
+      <div class="field">
+        <%= f.label :age %><br>
+        <%= f.number_field :age %>
+      </div>
+  
+<div class="field">
+  <%= f.label :mob_no %></br>
+  <%= f.telephone_field :mob_no %>
+</div>
+  <div class="actions">
+    <%= f.submit "Continue" %>
+  </div>
+<% end %>
